@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'CodeMirror',
+      // name: 'CodeMirror',
       code: MCM
     };
   }
@@ -23,6 +23,7 @@ class App extends Component {
   render() {
     let options = {
 			lineNumbers: true,
+      editing: false,
 		};
     return (
       <div>
@@ -30,7 +31,7 @@ class App extends Component {
           Start editing to see some magic happen :)
         </p>
         <div className="CodeMiror">
-          <CodeMirror className={"CodeMiror"} value={this.state.code} onChange={this.updateCode.bind(this)} options={options} />
+          <CodeMirror value={this.state.code} onChange={this.updateCode.bind(this)} options={options} />
         </div>
       </div>
     );
